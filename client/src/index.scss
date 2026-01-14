@@ -1,0 +1,291 @@
+
+// @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/* Global Styles to Remove Number Input Arrows */
+input[type="number"] {
+  /* Remove default browser number input arrows */
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+  -webkit-appearance: none; /* Safari, Chrome */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /* Remove up/down arrows in WebKit browsers */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Optional: Ensure consistent styling across input types */
+input[type="number"],
+input[type="text"].numeric-input {
+  /* Prevent text selection of number input */
+  user-select: text;
+  
+  /* Ensure consistent padding and border */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+  /* Prevent zoom on mobile devices */
+  font-size: 16px;
+}
+.list-unstyled {
+  border: 2px solid red($color: #000000) ;
+  border-radius: 2px solid $primary ;
+  background: radial-gradient(rgba($white, 0.90));
+}
+
+.button-style-one {
+    background-color: $primary !important;
+    border: none;               /* No border */
+    padding: 12px 20px;         /* Padding for a better look */
+    font-size: 16px;            /* Larger text */
+    color: $white;              /* White text */
+    border-radius: $border-radius-md;  /* Rounded corners */
+    transition: $transition-base;
+    
+    &:hover {
+        background-color: $primary-light !important;
+        transform: translateY(-1px);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.button-style-one:hover {
+  background-color:$primary !important;  /* Darker blue on hover */
+  transform: scale(1.05);      /* Slightly enlarge the button on hover */
+}
+
+.button-style-one:active {
+  background-color:$primary !important;  /* Even darker blue when clicked */
+  transform: scale(1);         /* Remove the scale effect */
+}
+
+.icon-container {
+    color: $primary !important; 
+}
+
+// View Loads
+.load-th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.load-td {
+    vertical-align: middle;
+}
+
+.load-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.load-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    
+    &.pending {
+        background-color: #ffe082;
+        color: #f59e0b;
+    }
+    &.delivered {
+        background-color: #cce5ff;
+        color: #004085;
+    }
+    &.cancelled {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    &.dispatched {
+        background-color: #d1ecf1;
+        color: #0c5460;
+    }
+    &.unknown {
+        background-color: #e2e3e5;
+        color: #383d41;
+    }
+}
+
+// Load Create
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Add space between the checkboxes */
+}
+
+.checkbox-group label{
+    margin-left: .5rem;
+}
+
+.custom-control {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.error{
+    background: #892727;
+}
+/* Global Styles */
+body {
+  font-family: "Lexend Deca", serif;
+  background-color:$background-color;
+  line-height: 2;
+  // font-weight:500;
+  font-style: normal;
+
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  border-color: $primary !important;
+  box-shadow: 0 0 0 0.2rem rgba($primary, 0.25) !important;
+}
+
+.input-group-text {
+  background-color: $primary !important;
+  color: $white;
+  font-weight: bold;
+}
+.tempreature-text {
+  background-color: $primary !important;
+  color: $white;
+  font-weight: bold;
+}
+
+select.form-control {
+  background-color: #f1f1f1;
+  font-size: 0.9rem;
+}
+
+/* Input Group Styling */
+.input-group {
+  display: flex;
+  border-radius: 8px;
+}
+
+.input-group-append {
+  display: flex;
+  align-items: center;
+}
+
+textarea.form-control {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+textarea.form-control:focus {
+  border-color: $primary !important;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $primary !important;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  background-color: #f9f9f9;
+}
+
+input[type="date"] {
+  background-color: #ffffff;
+  border-color: #ced4da;
+}
+
+/* Hover Effects */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 10px rgba(38, 143, 255, 0.5);
+}
+
+/* Hover and Active states */
+button:hover,
+.form-control:focus,
+select.form-control:focus {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(38, 143, 255, 0.5);
+}
+
+/* Button and Link Styling */
+.create-link {
+  color: $primary !important;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+  
+  svg {
+    margin-right: 8px;
+  }
+}
+.create-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background:$background-color !important;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+
+  &:hover {
+    background: $background-color;
+  }
+
+  svg {
+    font-size: 18px;
+  }
+}
+.css-yujuhj-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: $primary !important;
+}
+.css-yujuhj-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: $primary !important;
+}
