@@ -44,7 +44,7 @@ JWT_SECRET=your-super-secret-key
 REFRESH_TOKEN_SECRET=your-refresh-secret-key
 REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
-FRONTEND_URL=http://localhost:5174
+FRONTEND_URL=http://localhost:5175
 ```
 
 #### Frontend (.env)
@@ -94,7 +94,7 @@ Swagger docs at: `http://localhost:3000/api-docs`
 cd client
 npm run dev
 ```
-Client will start at: `http://localhost:5174`
+Client will start at: `http://localhost:5175`
 
 ---
 

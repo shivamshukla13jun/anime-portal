@@ -136,7 +136,7 @@ npm run dev
 
 ### 5. Access the Application
 
-- **Frontend**: http://localhost:5174
+- **Frontend**: http://localhost:5175
 - **Backend API**: http://localhost:3000
 - **API Documentation**: http://localhost:3000/api-docs
 
@@ -233,7 +233,7 @@ npm run dev
 | `REFRESH_TOKEN_SECRET` | Refresh token secret | - |
 | `REDIS_HOST` | Redis host | `127.0.0.1` |
 | `REDIS_PORT` | Redis port | `6379` |
-| `FRONTEND_URL` | Frontend URL for CORS | `http://localhost:5174` |
+| `FRONTEND_URL` | Frontend URL for CORS | `http://localhost:5175` |
 
 #### Frontend (.env)
 | Variable | Description | Default |

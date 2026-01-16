@@ -523,7 +523,7 @@ REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
 
 # Frontend
-FRONTEND_URL=http://localhost:5174
+FRONTEND_URL=http://localhost:5175
 ```
 
 ### Frontend (.env)

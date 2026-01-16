@@ -17,7 +17,9 @@
     "start:pm2:staging": "cross-env NODE_ENV=staging npm run build && cross-env NODE_ENV=staging pm2 start dist/server.js && sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u root --hp /root && pm2 save",
     "restart:pm2:staging": "cross-env NODE_ENV=staging npm run build && cross-env NODE_ENV=staging pm2 restart dist/server.js",
     "log:pm2": "pm2 logs",
-    "type-check:watch": "tsc --noEmit --watch"
+    "type-check:watch": "tsc --noEmit --watch",
+    "worker:video": "ts-node src/workers/video-render.worker.ts",
+    "worker:video:prod": "npm run build && node dist/workers/video-render.worker.js"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^8.1.0",

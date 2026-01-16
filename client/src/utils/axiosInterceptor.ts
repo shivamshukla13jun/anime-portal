@@ -27,9 +27,9 @@ api.interceptors.request.use(
       const isEncrypted = true; // toggle encryption here
       // config.headers["isencrypted"] = String(isEncrypted);
 
-      if (isEncrypted) {
-        encryptRequest(config);
-      }
+      // if (isEncrypted) {
+      //   encryptRequest(config);
+      // }
 
       return config;
     } catch (error) {
@@ -47,21 +47,21 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     try {
-      const isEncrypted = response.config.headers["isencrypted"] === "true";
+      // const isEncrypted = response.config.headers["isencrypted"] === "true";
 
-      if (isEncrypted) {
-        decryptResponse(response);
-      }
+      // if (isEncrypted) {
+      //   decryptResponse(response);
+      // }
 
       return response;
     } catch (error) {
       const axiosError = error as AxiosError;
       console.error("Response Handling Error:", axiosError);
-      const isEncrypted = axiosError?.config?.headers?.["isencrypted"] === "true";
+      // const isEncrypted = axiosError?.config?.headers?.["isencrypted"] === "true";
 
-      if (isEncrypted) {
-        decryptErrorResponse(axiosError);
-      }
+      // if (isEncrypted) {
+      //   decryptErrorResponse(axiosError);
+      // }
 
       return Promise.reject(axiosError);
     }
@@ -69,10 +69,10 @@ api.interceptors.response.use(
   async (error) => {
     console.error("Response Interceptor Error:", error);
 
-    const isEncrypted = error?.config?.headers?.["isencrypted"] === "true";
-    if (isEncrypted) {
-      decryptErrorResponse(error);
-    }
+    // const isEncrypted = error?.config?.headers?.["isencrypted"] === "true";
+    // if (isEncrypted) {
+    //   decryptErrorResponse(error);
+    // }
 
     const { response } = error;
     const message = response?.data?.message || error.message;

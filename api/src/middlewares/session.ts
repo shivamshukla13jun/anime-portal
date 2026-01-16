@@ -29,9 +29,11 @@ export const sessionMiddleware = session({
   saveUninitialized: false,
   store: sessionStore,
   cookie: {
-    httpOnly: !config.isProduction,
+    // httpOnly: !config.isProduction,
+    httpOnly: true,
     // sameSite: 'strict',
-    secure: config.isProduction,
+    // secure: config.isProduction,
+    secure: false,
     maxAge:config.sessionExpireTime, // 365 days in ms
   },
 });

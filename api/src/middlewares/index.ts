@@ -56,7 +56,6 @@ export class Middleware {
    
     static encryptResponseMiddleware(req: Request, res: Response, next: NextFunction) {
       try {
-        res.locals.companyId = req.headers["companyid"] as string;
         if (req.headers.isencrypted == "true") {
             const originalJson = res.json;
             res.json = function (data) {

@@ -1,10 +1,7 @@
 // Define allowed origins
 const allowedOrigins = [
-  'http://localhost:5173',  // Allow this URL
-  'http://localhost:3000',  // Allow this URL
-  'http://192.168.168.96:5173',  // Allow this URL
-  'http://192.168.168.96:5174',  // Allow this URL
-  'http://192.168.168.96:5175',  // Allow this URL
+  'http://localhost:5175',  // Allow this URL
+  'http://192.168.168.41:5175',  // Allow this URL
   'https://.net', // You can add more URLs here
   'https://staging.crm..net', // You can add more URLs here
 ];
@@ -20,7 +17,7 @@ const corsOptions = {
   // origin:"*",
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+  methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'], // Allowed methods
   allowedHeaders: ['Content-Type', 'Authorization', 'x-api-key', 'companyid', 'isencrypted'], // Allowed headers
 };
 

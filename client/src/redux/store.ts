@@ -4,15 +4,20 @@ import createIndexedDBStorage from "redux-persist-indexeddb-storage";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 import sidebarReducer from "./slices/sidebarSlice";
 import toastReducer from "./slices/toastSlice";
-import userReducer,{UserState} from "./slices/UserSlice";
+import userReducer, { UserState } from "./slices/UserSlice";
 
 // Import types for proper typing with redux-persist
 import { PersistConfig } from 'redux-persist';
 import { SidebarState } from "@/types";
-import { TypedUseSelectorHook,useSelector } from "react-redux";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
+
 const indexedDBStorage = createIndexedDBStorage("myAppDB");
+
+// Use a fallback secret key if environment variable is not set
+const secretKey = import.meta.env.VITE_API_INDEX_DB_STORAGE || 'fallback-secret-key-for-encryption';
+
 const encryptionTransform = encryptTransform({
-  secretKey: import.meta.env.VITE_API_INDEX_DB_STORAGE,
+  secretKey: secretKey,
   onError: (error: Error) => {
     console.warn("Encryption error:", error);
   },
@@ -23,12 +28,13 @@ const sidebarpersistConfig: PersistConfig<SidebarState> = {
   storage: indexedDBStorage,
   transforms: [encryptionTransform],
 };
+
 // Create the store with properly typed reducers
 export const store = configureStore({
   reducer: {
     sidebar: persistReducer<SidebarState>(sidebarpersistConfig, sidebarReducer),
     toast: toastReducer,
-    user:  userReducer,
+    user: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
